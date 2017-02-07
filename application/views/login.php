@@ -5,7 +5,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" method="POST" action="<?= base_url()?>dashboard">
                     <div class="msg">Inicia Sesión</div>
                     <div class="input-group">
                         <span class="input-group-addon">
