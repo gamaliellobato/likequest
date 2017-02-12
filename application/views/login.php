@@ -5,7 +5,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" action="<?= base_url()?>dashboard">
+                <form id="sign_in" method="POST" action="<?=base_url()?>dashboard">
                     <div class="msg">Inicia Sesión</div>
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -32,6 +32,19 @@
                             <button class="btn btn-block bg-pink waves-effect" type="submit">INICIAR</button>
                         </div>
                     </div>
+
+                    <!-- <?php
+if ($mensajeError == true) {
+    # code...
+
+    ?>
+                    <div class="alert bg-red alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        El correo y usuario no coincide vuelve a intentar.
+                    </div>
+                    <?php
+}
+?> -->
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
                             <a href="sign-up.html">Resgitrate Ahora!!</a>

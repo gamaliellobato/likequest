@@ -1,73 +1,79 @@
-<?php 	
+<?php
 
 /**
-* 
-*/
+ *
+ */
 class DashBoard extends CI_Controller
 {
-	
-	public function index()
-	{	
-		$this->session->sess_destroy();
 
-		$email = $this->input->post('username');
-		$password = $this->input->post('password');
+    public function index()
+    {
+        $this->session->sess_destroy();
 
-		//echo $email." ".$password;
-		$this->load->model('user');
-		
-		$fila = $this->user->getUser($email,$password);
+        $email    = $this->input->post('username');
+        $password = md5($this->input->post('password'));
 
-		if($fila != null){
-			if ($fila->password == $password) {
+        //$pass = md5($password);
 
-				$data = array(
-					'email' => $email,
-					'password' => $fila->password,
-					'id'=> $fila->id_usuarios,
-					'login' => true
-					);
+        //echo $email." ".$password;
+        $this->load->model('user');
 
-				$this->session->set_userdata($data);
-			}else{
-				header("Location: ". base_url());
-			}
-		}
-		else{
-			header("Location: ". base_url());
-		}
+        $fila = $this->user->getUser($email, $password);
 
-		$data = array(
-			'email' => $email, 
-			'id'    => 0,
-			'login' => true);
+        if ($fila != null) {
+            if ($fila->password == $password) {
 
-		$this->session->set_userdata($data);
+                $data = array(
+                    'email'    => $email,
+                    'password' => $fila->password,
+                    'id'       => $fila->id_usuarios,
+                    'login'    => true,
+                );
 
-		
-		//print("Dashboard");
-		$data = array('title' => 'Dashboard', 'app' => 'Likequest');
-		$this->load->view("guest/head",$data);
+                $this->session->set_userdata($data);
+            } else {
 
-		$data = array('mensaje' => 'estas en dashboard');
+                //$data = array('mensajeError' => true);
+                //$this->load->view("login", $data);
+                header("Location: " . base_url());
 
-		$result = $this->db->get('sucursales');
-		$data = array('consulta' => $result );
+            }
+        } else {
+            //$data = array('mensajeError' => true);
+            //$this->load->view("login", $data);
+            header("Location: " . base_url());
+            redirect('welcome' . $data);
 
-		$this->load->view("guest/content", $data);
-		$this->load->view("guest/nav");
+        }
 
-		$data = array('post' => 'Blog', 'descripcion' => 'Biendvenido al dashboard de codeiniter' );
-		$this->load->view("guest/footer");
-		$this->load->view("dashboard",$data);
+        /*$data = array(
+        'email' => $email,
+        'id'    => 0,
+        'login' => true);*/
 
+        $this->session->set_userdata($data);
 
-	}
+        //print("Dashboard");
+        $data = array('title' => 'Dashboard', 'app' => 'Likequest');
+        $this->load->view("guest/head", $data);
 
-	public function logout(){
-		$this->session->sess_destroy();
-		header("Location:". base_url());
-	}
+        $data = array('mensaje' => 'estas en dashboard');
+
+        $result = $this->db->get('sucursales');
+        $data   = array('consulta' => $result);
+
+        $this->load->view("guest/content", $data);
+        $this->load->view("guest/nav");
+
+        $data = array('post' => 'Blog', 'descripcion' => 'Biendvenido al dashboard de codeiniter');
+        $this->load->view("guest/footer");
+        $this->load->view("dashboard", $data);
+
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        header("Location:" . base_url());
+    }
 }
-
- ?>

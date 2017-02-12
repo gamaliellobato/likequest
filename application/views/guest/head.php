@@ -13,6 +13,34 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
+  <!--   Bootstrap Core Css
+  
+  Colorpicker Css
+  <link href="<?= base_url() ?>/materialize/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+  
+  Dropzone Css
+  <link href="<?= base_url() ?>/materialize/plugins/dropzone/dropzone.css" rel="stylesheet">
+  
+  Multi Select Css
+  <link href="<?= base_url() ?>/materialize/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+  
+  Bootstrap Spinner Css
+  <link href="<?= base_url() ?>/materialize/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+  
+  Bootstrap Tagsinput Css
+  <link href="<?= base_url() ?>/materialize/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+  
+  Bootstrap Select Css
+  <link href="<?= base_url() ?>/materialize/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+  
+  noUISlider Css
+  <link href="<?= base_url() ?>/materialize/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+  
+  
+  
+  
+   -->
+
     <!-- Bootstrap Core Css -->
     <link href="<?= base_url() ?>/materialize/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -30,4 +58,26 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?= base_url() ?>/materialize/css/themes/all-themes.css" rel="stylesheet" />
+
+        <!-- Colorpicker Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+      
+      <!-- Dropzone Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/dropzone/dropzone.css" rel="stylesheet">
+      
+      <!-- Multi Select Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+      
+      <!-- Bootstrap Spinner Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+      
+      <!-- Bootstrap Tagsinput Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+      
+      <!-- Bootstrap Select Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+      
+      <!-- noUISlider Css -->
+      <link href="<?= base_url() ?>/materialize/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
 </head>
